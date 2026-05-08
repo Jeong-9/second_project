@@ -27,6 +27,9 @@
 ## 전자 회로도
 <img width="793" height="424" alt="image" src="https://github.com/user-attachments/assets/1aa897c5-5e47-45c0-81fe-75f57651bf1a" />
 
+## 순서도
+https://app.diagrams.net/#G1pJ-QzU2wL8Nq2nZNt2QX4CS_DeTYeUAY#%7B%22pageId%22%3A%22oHe_NG4VEoslh1zr8APn%22%7D
+
 
 ## 담당 역할
 저는 아래 기능들을 중심으로 구현 및 수정했습니다.
