@@ -14,11 +14,9 @@
 - **형태**: 팀 프로젝트
 - **개발 인원**: 5명
 - **개발 환경**: Python, Flask, HTML, MySQL , OPENCV
-   <img width="178" height="165" alt="image" src="https://github.com/user-attachments/assets/1beec973-cf9d-424e-b4d0-86e659f0f62e" />
-<img width="168" height="161" alt="image" src="https://github.com/user-attachments/assets/b9235264-b3b3-42e0-91ae-2d98578f18d0" />
-<img width="171" height="158" alt="image" src="https://github.com/user-attachments/assets/706fe636-fb22-4f46-91c7-06bd1f6fa08d" />
-<img width="160" height="164" alt="image" src="https://github.com/user-attachments/assets/27a6452d-b815-484b-8750-7732959c371c" />
-<img width="173" height="149" alt="image" src="https://github.com/user-attachments/assets/74c4cbfa-abd1-4336-8c41-38ac577a297d" />
+
+<img width="517" height="115" alt="image" src="https://github.com/user-attachments/assets/2ff40ec9-8499-4767-923b-3ed34a6f6ed3" />
+
 
 ## 통신 및 기능 흐름도
 <img width="586" height="400" alt="image" src="https://github.com/user-attachments/assets/fa1d5a74-b3ec-4e69-ba1d-6ac0dc847517" />
