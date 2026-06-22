@@ -52,6 +52,7 @@ https://app.diagrams.net/#G1pJ-QzU2wL8Nq2nZNt2QX4CS_DeTYeUAY#%7B%22pageId%22%3A%
 ---
 ## 하드웨어 제작 및 시스템 구성
 프로젝트의 하드웨어 제작 과정에 참여했습니다.
+
 <img width="366" height="660" alt="image" src="https://github.com/user-attachments/assets/498c390c-7727-40a9-bee7-283121918153" />
 
 - 목재 재료를 이용해 시스템 본체 프레임을 제작
