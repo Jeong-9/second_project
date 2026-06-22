@@ -63,7 +63,7 @@ https://app.diagrams.net/#G1pJ-QzU2wL8Nq2nZNt2QX4CS_DeTYeUAY#%7B%22pageId%22%3A%
 - 실제 동작 테스트를 통해 구조적 안정성과 구동 흐름을 점검
 
 
-## 고객 서버에서 맡은 주요 기능
+## 프로젝트에서 맡은 주요 기능
 
 ### 1. 출석체크 기능
 <img width="1109" height="135" alt="image" src="https://github.com/user-attachments/assets/6417e6c4-3b9c-4208-942f-883cb9af612d" />
