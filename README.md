@@ -96,3 +96,6 @@ https://app.diagrams.net/#G1pJ-QzU2wL8Nq2nZNt2QX4CS_DeTYeUAY#%7B%22pageId%22%3A%
 - 결제할 때 사용한 포인트가 있다면,
   주문 취소 시 해당 포인트가 다시 회원 포인트로 복구되도록 처리했습니다.
 
+## 시연 영상
+https://youtu.be/dJrTOm3M0a4
+
