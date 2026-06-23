@@ -96,6 +96,9 @@ https://app.diagrams.net/#G1pJ-QzU2wL8Nq2nZNt2QX4CS_DeTYeUAY#%7B%22pageId%22%3A%
 - 결제할 때 사용한 포인트가 있다면,
   주문 취소 시 해당 포인트가 다시 회원 포인트로 복구되도록 처리했습니다.
 
+### 6. 출석 체크 및 포인트 적립을 위한 데이터베이스 설계
+- 출석 체크 기능을 구현하기 위해 회원 테이블에 보유 포인트, 마지막 출석일, 연속 출석일 컬럼을 추가했습니다. 또한 회원별 출석 날짜와 지급 포인트를 저장하기 위해 attendance_log 테이블을 생성했습니다. member_id와 attendance_date에 유니크 제약 조건을 설정하여 하루에 한 번만 출석할 수 있도록 DB 구조를 설계했습니다.
+
 ## 시연 영상
 https://youtu.be/dJrTOm3M0a4
 
