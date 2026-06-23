@@ -13,7 +13,7 @@
 - **프로젝트명**: BookNest
 - **형태**: 팀 프로젝트
 - **개발 인원**: 5명
-- **개발 환경**: Python, Flask, HTML, MySQL , OPENCV
+- **개발 환경**: Python, Flask, HTML, CSS, JavaScript, MySQL, OpenCV
 
 <img width="517" height="115" alt="image" src="https://github.com/user-attachments/assets/2ff40ec9-8499-4767-923b-3ed34a6f6ed3" />
 
@@ -33,14 +33,15 @@ https://app.diagrams.net/#G1pJ-QzU2wL8Nq2nZNt2QX4CS_DeTYeUAY#%7B%22pageId%22%3A%
 저는 아래 기능들을 중심으로 구현 및 수정했습니다.
 
 ### 소프트웨어
-- 출석체크 기능 구현
-- 1일 1회 출석 시 100포인트 지급 로직 구현
-- 7일 연속 출석 시 500포인트 추가 지급 기능 구현
-- 출석 스탬프판 UI 구현
-- 결제 페이지에서 보유 포인트 사용 기능 구현
-- 장바구니 결제 흐름에서도 포인트 사용 가능하도록 연동
-- 주문 취소 시 사용 포인트 복구 처리
-- 출석/포인트 관련 데이터베이스 테이블 설계 및 수정
+- 로그인 회원 기준 출석체크 기능 구현
+- 1일 1회 출석 제한 로직 구현
+- 출석 시 100포인트 자동 적립 기능 구현
+- 7일 연속 출석 시 500포인트 추가 지급 로직 구현
+- 출석 기록을 시각적으로 확인할 수 있는 출석 스탬프판 UI 구현
+- 회원 보유 포인트를 결제 페이지에서 사용할 수 있도록 결제 금액 계산 로직 연동
+- 장바구니 결제 및 바로 구매 흐름에서 포인트 사용 기능 적용
+- 주문 취소 시 사용 포인트가 회원 포인트로 복구되도록 처리
+- 출석 기록 저장을 위한 attendance_log 테이블 설계 및 회원 테이블 컬럼 수정
 
 ### 하드웨어
 - 목재 구조물 제작 및 조립 보조
@@ -97,8 +98,38 @@ https://app.diagrams.net/#G1pJ-QzU2wL8Nq2nZNt2QX4CS_DeTYeUAY#%7B%22pageId%22%3A%
   주문 취소 시 해당 포인트가 다시 회원 포인트로 복구되도록 처리했습니다.
 
 ### 6. 출석 체크 및 포인트 적립을 위한 데이터베이스 설계
-- 출석체크 기능을 구현하기 위해 회원 테이블에 보유 포인트, 마지막 출석일, 연속 출석일 컬럼을 추가했습니다. 또한 회원별 출석 기록을 저장하기 위해 attendance_log 테이블을 생성했습니다. member_id와 attendance_date에 유니크 제약 조건을 설정하여 같은 회원이 하루에 한 번만 출석할 수 있도록 구성했습니다.
 
-## 시연 영상
+출석체크 기능을 구현하기 위해 회원 테이블에 보유 포인트, 마지막 출석일, 연속 출석일 컬럼을 추가했습니다.  
+또한 회원별 출석 기록을 저장하기 위해 `attendance_log` 테이블을 생성했습니다.  
+`member_id`와 `attendance_date`에 유니크 제약 조건을 설정하여 같은 회원이 하루에 한 번만 출석할 수 있도록 구성했습니다.
+
+```sql
+ALTER TABLE member
+ADD COLUMN point INT DEFAULT 0;
+
+ALTER TABLE member
+ADD COLUMN last_attendance_date DATE NULL;
+
+ALTER TABLE member
+ADD COLUMN attendance_streak INT DEFAULT 0;
+
+CREATE TABLE attendance_log (
+    attendance_id INT AUTO_INCREMENT PRIMARY KEY,
+    member_id INT NOT NULL,
+    attendance_date DATE NOT NULL,
+    base_point INT DEFAULT 100,
+    bonus_point INT DEFAULT 0,
+    total_point INT DEFAULT 0,
+    streak_count INT DEFAULT 1,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+
+    UNIQUE KEY unique_member_attendance (member_id, attendance_date),
+
+    CONSTRAINT fk_attendance_member
+    FOREIGN KEY (member_id)
+    REFERENCES member(member_id)
+    ON DELETE CASCADE
+);
+```
+### 시연 영상
 https://youtu.be/dJrTOm3M0a4
-
