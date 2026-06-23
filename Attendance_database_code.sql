@@ -1,3 +1,5 @@
+CREATE DATABASE IF NOT EXISTS kyobobook;
+
 USE kyobobook;
 
 -- 회원 테이블에 포인트 컬럼 추가
@@ -23,5 +25,10 @@ CREATE TABLE attendance_log (
     streak_count INT DEFAULT 1,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 
-    UNIQUE KEY unique_member_attendance (member_id, attendance_date)
+    UNIQUE KEY unique_member_attendance (member_id, attendance_date),
+
+    CONSTRAINT fk_attendance_member
+    FOREIGN KEY (member_id)
+    REFERENCES member(member_id)
+    ON DELETE CASCADE
 );
